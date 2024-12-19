@@ -28,5 +28,11 @@ namespace YummyProject.Controllers
             var values= context.Abouts.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult DefaultProduct()
+        {
+            var values=context.Categories.ToList();
+            return PartialView(values);
+        }
     }
 }
