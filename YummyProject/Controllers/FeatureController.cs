@@ -8,10 +8,13 @@ using YummyProject.Models;
 
 namespace YummyProject.Controllers
 {
+    [Authorize]
     public class FeatureController : Controller
     {
         // GET: Feature
         YummyContext context=new YummyContext();
+      
+        
         public ActionResult Index()
         {
             var values= context.Features.ToList();

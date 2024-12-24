@@ -7,6 +7,7 @@ using YummyProject.Context;
 
 namespace YummyProject.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         // GET: Default
@@ -32,6 +33,18 @@ namespace YummyProject.Controllers
         public PartialViewResult DefaultProduct()
         {
             var values=context.Categories.ToList();
+            return PartialView(values);
+        }
+
+        public PartialViewResult DefaultService()
+        {
+            var value = context.Services.FirstOrDefault();
+            return PartialView(value);
+        }
+
+        public PartialViewResult DefaultServiceDetail()
+        {
+            var values= context.ServiceDetails.ToList();
             return PartialView(values);
         }
     }
