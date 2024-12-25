@@ -8,7 +8,7 @@ using YummyProject.Models;
 
 namespace YummyProject.Controllers
 {
-    [Authorize]
+    
     public class FeatureController : Controller
     {
         // GET: Feature

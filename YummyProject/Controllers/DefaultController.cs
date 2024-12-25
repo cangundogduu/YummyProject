@@ -47,5 +47,11 @@ namespace YummyProject.Controllers
             var values= context.ServiceDetails.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult DefaultTestimonial()
+        {
+            var values = context.Testimonials.ToList();
+            return PartialView(values);
+        }
     }
 }

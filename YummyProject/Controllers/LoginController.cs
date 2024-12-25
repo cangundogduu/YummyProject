@@ -21,17 +21,16 @@ namespace YummyProject.Controllers
             return View();
         }
 
-        
+
         [HttpPost]
-        public ActionResult SignIn(Admin model,string returnUrl)
+        public ActionResult SignIn(Admin model, string returnUrl)
         {
-            var admin = context.Admins.FirstOrDefault(X => X.NameSurname == model.NameSurname && X.Password == model.Password);
+            var admin = context.Admins.FirstOrDefault(x => x.UserName == model.UserName && x.Password == model.Password);
 
             if (admin == null)
             {
-                ModelState.AddModelError("", "Kullanıcı Adı veya Şifre Hatalı");
+                ModelState.AddModelError("", "Kullanıcı adı veya şifre hatalı");
                 return View(model);
-
             }
 
             FormsAuthentication.SetAuthCookie(admin.UserName, false);
@@ -43,13 +42,15 @@ namespace YummyProject.Controllers
             }
 
             return RedirectToAction("Index", "Dashboard");
+
+
         }
 
-        
         public ActionResult SignOut()
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
+
             return RedirectToAction("Index", "Default");
         }
     }

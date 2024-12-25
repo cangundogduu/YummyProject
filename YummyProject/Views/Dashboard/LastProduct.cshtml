@@ -1,0 +1,35 @@
+﻿@model List<YummyProject.Models.Product>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Son Eklenen 10 Ürün
+    </div>
+    <div class="card-body">
+
+        <table id="datatablesSimple">
+            <thead>
+                
+                <tr>
+                    <th>ID</th>
+                    <th>Image Url</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Ingredients</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.ProductId</th>
+                    <td>@item.ImageUrl</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.Category.CategoryName</td>
+                    <td>@item.Ingredients</td>
+                    <td>@item.Price</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

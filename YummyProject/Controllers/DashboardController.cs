@@ -24,8 +24,14 @@ namespace YummyProject.Controllers
 
             //En ucuz ürünü getir.
             ViewBag.cheapestPrice=context.Products.OrderBy(x=>x.Price).Select(x=>x.ProductName).FirstOrDefault();
-            
+
             return View();
+        }
+
+        public PartialViewResult LastProduct()
+        {
+            var last10products= context.Products.Take(10).OrderByDescending(x=>x.ProductId).ToList();
+            return PartialView(last10products);
         }
     }
 }
