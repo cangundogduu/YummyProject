@@ -1,0 +1,41 @@
+﻿@model YummyProject.Models.ContactInfo
+
+<div class="container">
+    <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+            <i class="bi bi-geo-alt icon"></i>
+            <div class="address">
+                <h4>Konum</h4>
+                <p>@Model.Address</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex">
+            <i class="bi bi-telephone icon"></i>
+            <div>
+                <h4>İletişim Bilgilerimiz</h4>
+                <p>
+                    <strong>Telefon:</strong> <span>@Model.PhoneNumber</span><br>
+                    <strong>Email:</strong> <span>@Model.Email</span><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex">
+            <i class="bi bi-clock icon"></i>
+            <div>
+                <h4>Çalışma Saatlerimiz</h4>
+                <p>
+                    <strong>Pazartesi-Cumartesi:</strong> <span>@Model.OpenHours</span><br>
+                    <strong>Pazar</strong>: <span>Kapalı</span>
+                </p>
+            </div>
+        </div>
+
+        @Html.Action("SocialMedias", "UILayout")
+
+    </div>
+</div>
+

@@ -1,0 +1,45 @@
+﻿@model List<YummyProject.Models.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<h2>Hakkımızda Alanı</h2>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Resim Url</th>
+        <th>1. Başlık</th>
+        <th>2. Başlık</th>
+        <th>3. Başlık</th>
+        <th>Açıklama</th>
+        <th>Video Url</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <th>@item.AboutId</th>
+            <td><img src="@item.ImageUrl" style="width:50px;height:50px" /></td>
+            <td>@item.Item1</td>
+            <td>@item.Item2</td>
+            <td>@item.Item3</td>
+            <td>@item.Description</td>
+            <td>@item.VideoUrl</td>
+            <td><a href="/About/DeleteAbout/@item.AboutId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/About/UpdateAbout/@item.AboutId" class="btn btn-info">Güncelle</a></td>
+
+        </tr>
+    }
+
+
+</table>
+<br />
+<a href="/About/CreateAbout/" class="btn btn-primary">Yeni Hakkımızda Alanı Ekle</a>

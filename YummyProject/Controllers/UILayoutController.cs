@@ -21,5 +21,11 @@ namespace YummyProject.Controllers
             var values = context.SocialMedias.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult Contacts()
+        {
+            var value = context.ContactInfoes.FirstOrDefault();
+            return PartialView(value);
+        }
     }
 }
