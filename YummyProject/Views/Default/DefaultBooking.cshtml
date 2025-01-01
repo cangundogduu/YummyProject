@@ -1,0 +1,57 @@
+﻿@model YummyProject.Models.Booking
+
+<section id="book-a-table" class="book-a-table section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Rezervasyon Yap</h2>
+        <p><span>Yerinizi Ayarlamak İçin</span> <span class="description-title">Bizimle İletişime Geçin<br></span></p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+        <div class="row g-0" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="col-lg-4 reservation-img" style="background-image: url(~/Templates/yummy-red-1.0.0/assets/img/reservation.jpg);"></div>
+
+            <div class="col-lg-8 d-flex align-items-center reservation-form-bg" data-aos="fade-up" data-aos-delay="200">
+                <form action="/Default/DefaultBooking" method="post" role="form" class="php-email-form">
+                    <div class="row gy-4">
+                        <div class="col-lg-4 col-md-6">
+                            <input type="text" name="Name" class="form-control" id="name" placeholder="Adınız.." required="">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input type="email" class="form-control" name="Email" id="email" placeholder="Email Adresiniz" required="">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input type="text" class="form-control" name="PhoneNumber" id="phone" placeholder="İletişim Numaranız.." required="">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input type="date" name="BookingDate" class="form-control" id="date" placeholder="Tarih" required="">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input type="time" class="form-control" name="time" id="time" placeholder="Time" required="">
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <input type="number" class="form-control" name="PersonCount" id="people" placeholder="# Kişi sayısı.." required="">
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <textarea class="form-control" name="MessageContent" rows="5" placeholder="Mesajınız.."></textarea>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <div class="loading">Yükleniyor..</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Rezervasyonunuz tamamlandı. Size telefon yada mail olarak dönüş sağlayacağız. Bizi tercih ettiğiniz için teşekkür ederiz.!</div>
+                        <button type="submit">Şimdi Rezervasyon Yap</button>
+                    </div>
+                </form>
+            </div><!-- End Reservation Form -->
+
+        </div>
+
+    </div>
+
+</section>

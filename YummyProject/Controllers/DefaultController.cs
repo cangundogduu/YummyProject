@@ -5,6 +5,7 @@ using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using YummyProject.Context;
+using YummyProject.Models;
 
 namespace YummyProject.Controllers
 {
@@ -69,6 +70,45 @@ namespace YummyProject.Controllers
         {
             var values= context.Chefs.ToList();
             return PartialView(values);
+        }
+
+        public PartialViewResult DefaultContact()
+        {
+            var value= context.ContactInfoes.FirstOrDefault();
+            return PartialView(value);
+        }
+
+        [HttpGet]
+        public ActionResult DefaultBooking()
+        {
+            return PartialView();
+        }
+        
+        
+        
+        [HttpPost]
+        public ActionResult DefaultBooking(Booking model)
+        {
+            model.IsApproved = false;
+            context.Bookings.Add(model);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult DefaultMessage()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public ActionResult DefaultMessage(Message message) 
+        {
+            
+            message.IsRead = false;
+            context.Messages.Add(message);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
     }

@@ -498,6 +498,9 @@
     <Content Include="Views\Default\DefaultTestimonial.cshtml" />
     <Content Include="Views\Default\DefaultEvent.cshtml" />
     <Content Include="Views\Default\DefaultChef.cshtml" />
+    <Content Include="Views\Default\DefaultContact.cshtml" />
+    <Content Include="Views\Default\DefaultBooking.cshtml" />
+    <Content Include="Views\Default\DefaultMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
