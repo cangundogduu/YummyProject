@@ -1,0 +1,30 @@
+﻿@model YummyProject.Models.Product
+@{
+    ViewBag.Title = "CreateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<form method="post">
+<h2>Ürün Ekleme Sayfası</h2>
+
+<label><strong>Resim URL</strong></label>
+@Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+<br />
+
+<label><strong>Ürün Adı</strong></label>
+@Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+<br />
+<label><strong>İçindekiler</strong></label>
+@Html.TextBoxFor(x => x.Ingredients, new { @class = "form-control" })
+<br />
+<label><strong>Ücreti</strong></label>
+@Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+<br />
+<label><strong>Kategorisi</strong></label>
+@Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.kategoriler, new { @class = "form-control" })
+<br />
+<div class="text-center">
+    <button class="btn btn-warning">Ürünü Ekle</button>
+</div>
+<br />
+
+</form>

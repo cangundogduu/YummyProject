@@ -12,7 +12,7 @@ namespace YummyProject.Controllers
         YummyContext context = new YummyContext();
         public ActionResult Index()
         {
-            var values = context.Bookings.Where(x => x.IsApproved == true).ToList();
+            var values = context.Bookings.ToList();
             return View(values);
         }
 
@@ -30,13 +30,6 @@ namespace YummyProject.Controllers
             value.IsApproved = false;
             context.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-
-        public ActionResult DeclineBookingList()
-        {
-            var values = context.Bookings.Where(x => x.IsApproved == false).ToList();
-            return View(values);
         }
     }
 }

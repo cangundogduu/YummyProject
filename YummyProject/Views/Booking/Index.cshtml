@@ -38,6 +38,14 @@
                 {
                     <span class="badge badge-success" style="background-color: green; color: white;">Onaylandı</span>
                 }
+                else if (item.IsApproved == false && item.BookingDate >= DateTime.Now)
+                {
+                    <span class="badge badge-danger" style="background-color: red; color: white;">Reddedildi</span>
+                }
+                else
+                {
+                    <span class="badge badge-info" style="background-color: gray; color: white;">Beklemede</span>
+                }
             </td>
             <td><a href="/Booking/ConfirmBooking/@item.BookingId" class="btn btn-info">Onayla</a></td>
             <td><a href="/Booking/DeclineBooking/@item.BookingId" class="btn btn-danger">Reddet</a></td>
@@ -46,5 +54,5 @@
     }
 
 </table>
-<a href="/Booking/DeclineBookingList/" class="btn btn-danger">Red edilmiş Rezervasyonları Görüntüle</a>
+@*<a href="/Booking/DeclineBookingList/" class="btn btn-danger">Red edilmiş Rezervasyonları Görüntüle</a>*@
 

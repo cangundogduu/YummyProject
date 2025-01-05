@@ -55,5 +55,26 @@ namespace YummyProject.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult UpdateFeature(int id)
+        {
+            var value = context.Features.Find(id);
+            return View(value) ;
+        }
+
+        [HttpPost]
+        public ActionResult UpdateFeature(Feature model)
+        {
+            var value= context.Features.Find(model.FeatureId);
+            value.VideoUrl = model.VideoUrl;
+            value.ImageUrl = model.ImageUrl;
+            value.Title = model.Title;
+            value.Description = model.Description;
+
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
